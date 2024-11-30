@@ -5,7 +5,8 @@ import { _afterTaskAsyncStorage as afterTaskAsyncStorage } from './after-task-as
 import type { WorkUnitStore } from './work-unit-async-storage.external'
 
 export interface AfterTaskStore {
-  readonly phase: WorkUnitStore['phase']
+  readonly phase: WorkUnitStore['phase'] | undefined
+  readonly originalStacks: (string | undefined)[] | undefined
 }
 
 export type AfterTaskAsyncStorage = AsyncLocalStorage<AfterTaskStore>
